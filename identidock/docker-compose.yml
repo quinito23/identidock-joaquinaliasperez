@@ -1,0 +1,14 @@
+services:
+  identidock:
+    build: .
+    ports:
+      - "5000:5000"
+    volumes:
+      - ./app:/app
+    depends_on:
+      - dnmonster
+  dnmonster:
+    image: amouat/dnmonster:1.0
+    ports:
+      - "5080:8080"
+
