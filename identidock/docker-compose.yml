@@ -7,8 +7,10 @@ services:
       - ./app:/app
     depends_on:
       - dnmonster
+      - redis
   dnmonster:
     image: amouat/dnmonster:1.0
     ports:
       - "5080:8080"
-
+  redis:
+    image: redis:3.0
